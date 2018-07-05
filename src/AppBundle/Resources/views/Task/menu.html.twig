@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Ticket</title>
+</head>
+<body>
+
+<h1>Bienvenido {{ app.user.username }}</h1>
+<br>
+
+<ul>
+    <li><a href="#">Registrar Tareas</a></li>
+    <li><a href="{{ path('departamentos') }}">Registrar Departamentos</a></li>
+    <li><a href="{{ path('logout') }}">Cerrar Sesión</a></li>
+</ul>
+
+</body>
+</html>

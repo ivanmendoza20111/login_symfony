@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket | Editar Departamentos</title>
+</head>
+<body>
+<h1>Editar Departamentos</h1>
+<hr>
+{{ form_start(form,{'action': path('editar_departamentos',{'id':id})}) }}
+{{ form_row(form.descripcion) }}
+<button type="submit">Guardar!</button>
+{{ form_end(form) }}
+<br>
+</body>
+</html>

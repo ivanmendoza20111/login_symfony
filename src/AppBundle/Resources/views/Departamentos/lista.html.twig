@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket|Departamentos</title>
+</head>
+<body>
+<h1>Registrar Departamentos</h1>
+<hr>
+{{ form_start(form,{'action': path('insert_departamentos')}) }}
+{{ form_row(form.descripcion) }}
+<button type="submit">Guardar!</button>
+{{ form_end(form) }}
+<br>
+<table border="1px solid">
+    <thead>
+        <th>ID</th>
+        <th>Descripción</th>
+    </thead>
+    <tbody>
+    {% if departamentos|length > 0 %}
+        {% for departamento in departamentos %}
+            <tr>
+                <td>{{ departamento.id }}</td>
+                <td>{{ departamento.descripcion }}</td>
+                <td><a href="{{ path('eliminar_departamentos',{'id':departamento.id}) }}">Eliminar</a></td>
+                <td><a href="{{ path('editar_departamentos',{'id':departamento.id}) }}">Editar</a></td>
+            </tr>
+        {% endfor %}
+    {% else %}
+        <tr>
+            <td colspan="2"><b>No Hay Registros</b></td>
+        </tr>
+    {% endif %}
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -5,6 +5,12 @@
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
 
+{#
+    {% if is_granted('ROLE_USER') %}
+        {{ dump(app.user) }}
+    {% endif %}
+#}
+
 <form action="{{ path('login') }}" method="post">
     <label for="username">Username:</label>
     <input type="text" id="username" name="_username" value="{{ last_username }}" />
@@ -18,7 +24,8 @@
         <input type="hidden" name="_target_path" value="/account" />
     #}
 
-    <button type="submit">login</button>
+    <button type="submit">Login</button>
     <br>
+    <input hidden name="_target_path" value="/menu">
     <a href="{{ path('registro') }}">Registrarse!</a>
 </form>
